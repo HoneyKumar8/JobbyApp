@@ -13,10 +13,10 @@ const JobsList = props => {
     setStatus('LOADING')
     const token = Cookies.get('jwt_token')
 
-    const employmentQuery = filters.employmentTypes.join(',') || '' // ✅ comma-separated
+    const employmentQuery = (filters.employmentTypes || []).join(',')
     const salaryQuery = filters.salaryRange || ''
     const searchQuery = filters.searchInput || ''
-    const locationQuery = filters.locations.join(',') || ''
+    const locationQuery = (filters.locations || []).join(',')
 
     const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employmentQuery}&minimum_package=${salaryQuery}&search=${searchQuery}&location=${locationQuery}`
 
@@ -40,8 +40,13 @@ const JobsList = props => {
 
   useEffect(() => {
     fetchJobs()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters])
+    // eslint-disable-next-line
+  }, [
+    filters.employmentTypes,
+    filters.salaryRange,
+    filters.locations,
+    filters.searchInput,
+  ])
 
   const renderLoader = () => (
     <div className="loader-container" data-testid="loader">

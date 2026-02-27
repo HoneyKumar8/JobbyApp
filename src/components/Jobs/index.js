@@ -14,6 +14,7 @@ const Jobs = () => {
   const [selectedEmploymentTypes, setSelectedEmploymentTypes] = useState([])
   const [selectedSalaryRange, setSelectedSalaryRange] = useState('')
   const [selectedLocations, setSelectedLocations] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
 
   const fetchProfile = async () => {
     setProfileStatus('LOADING')
@@ -68,9 +69,6 @@ const Jobs = () => {
     }
   }
 
-  const onSearchInputChange = event => setSearchInput(event.target.value)
-  const onSearchSubmit = () => {} // Can be wired to trigger fetch if needed
-
   const onChangeEmploymentType = event => {
     const {value, checked} = event.target
     setSelectedEmploymentTypes(prev =>
@@ -90,10 +88,18 @@ const Jobs = () => {
     )
   }
 
+  const onSearchInputChange = event => {
+    setSearchInput(event.target.value)
+  }
+
+  const onSearchSubmit = () => {
+    setSearchQuery(searchInput)
+  }
+
   const filters = {
     employmentTypes: selectedEmploymentTypes,
     salaryRange: selectedSalaryRange,
-    searchInput,
+    searchInput: searchQuery,
     locations: selectedLocations,
   }
 
