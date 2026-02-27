@@ -2,7 +2,7 @@
   "name": "jobby-app",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://github.com/HoneyKumar8/JobbyApp.git",
+  "homepage": "https://honeykumar8.github.io/JobbyApp",
   "engines": {
     "node": "^10.13 || 12 || 14 || 15",
     "npm": ">=6"
