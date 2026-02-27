@@ -1,0 +1,33 @@
+.filters-group-container {
+  width: 250px;
+  padding-right: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  flex-grow: 1;
+  padding: 8px;
+  background-color: #272727;
+  border: 1px solid #475569;
+  color: #ffffff;
+}
+
+.search-icon {
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+.filters-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.filters-list li {
+  margin-bottom: 8px;
+  color: #f8fafc;
+}

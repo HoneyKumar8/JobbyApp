@@ -1,0 +1,27 @@
+.jobs-list-container {
+  flex-grow: 1;
+}
+
+.jobs-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.failure-view,
+.no-jobs-view {
+  text-align: center;
+  padding: 40px;
+}
+
+.failure-view img,
+.no-jobs-view img {
+  width: 200px;
+  margin-bottom: 20px;
+}

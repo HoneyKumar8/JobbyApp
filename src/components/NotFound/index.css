@@ -1,0 +1,10 @@
+.not-found-container {
+  text-align: center;
+  padding: 40px;
+  color: #f8fafc;
+}
+
+.not-found-container img {
+  width: 300px;
+  margin-bottom: 20px;
+}

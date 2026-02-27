@@ -1,0 +1,31 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727;
+  padding: 16px;
+}
+
+.website-logo {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
