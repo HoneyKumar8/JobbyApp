@@ -20,14 +20,18 @@ const Header = props => {
       </Link>
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
+          {' '}
+          <Link to="/">Home</Link>{' '}
         </li>
         <li>
-          <Link to="/jobs">Jobs</Link>
+          {' '}
+          <Link to="/jobs">Jobs</Link>{' '}
         </li>
         <li>
+          {' '}
           <button type="button" onClick={onClickLogout}>
-            Logout
+            {' '}
+            Logout{' '}
           </button>
         </li>
       </ul>

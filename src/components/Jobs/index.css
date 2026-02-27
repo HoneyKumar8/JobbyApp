@@ -9,3 +9,22 @@
   display: flex;
   padding: 20px;
 }
+
+.filters-section {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.jobs-content {
+  display: flex;
+  gap: 20px;
+}
+
+.filters-section {
+  width: 25%;
+}
+
+.jobs-list-container {
+  width: 75%;
+}

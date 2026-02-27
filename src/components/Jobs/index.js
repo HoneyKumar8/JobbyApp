@@ -13,6 +13,7 @@ const Jobs = () => {
   const [searchInput, setSearchInput] = useState('')
   const [selectedEmploymentTypes, setSelectedEmploymentTypes] = useState([])
   const [selectedSalaryRange, setSelectedSalaryRange] = useState('')
+  const [selectedLocations, setSelectedLocations] = useState([])
 
   const fetchProfile = async () => {
     setProfileStatus('LOADING')
@@ -81,10 +82,19 @@ const Jobs = () => {
     setSelectedSalaryRange(event.target.value)
   }
 
+  const onChangeLocation = event => {
+    const {value, checked} = event.target
+
+    setSelectedLocations(prev =>
+      checked ? [...prev, value] : prev.filter(id => id !== value),
+    )
+  }
+
   const filters = {
     employmentTypes: selectedEmploymentTypes,
     salaryRange: selectedSalaryRange,
     searchInput,
+    locations: selectedLocations,
   }
 
   const employmentTypesList = [
@@ -101,6 +111,14 @@ const Jobs = () => {
     {salaryRangeId: '4000000', label: '40 LPA and above'},
   ]
 
+  const locationsList = [
+    {locationId: 'HYDERABAD', label: 'Hyderabad'},
+    {locationId: 'BANGALORE', label: 'Bangalore'},
+    {locationId: 'CHENNAI', label: 'Chennai'},
+    {locationId: 'DELHI', label: 'Delhi'},
+    {locationId: 'MUMBAI', label: 'Mumbai'},
+  ]
+
   return (
     <div className="jobs-container">
       <Header />
@@ -112,6 +130,8 @@ const Jobs = () => {
             salaryRangesList={salaryRangesList}
             onChangeEmploymentType={onChangeEmploymentType}
             onChangeSalaryRange={onChangeSalaryRange}
+            locationsList={locationsList}
+            onChangeLocation={onChangeLocation}
             onSearchInputChange={onSearchInputChange}
             onSearchSubmit={onSearchSubmit}
             searchInput={searchInput}

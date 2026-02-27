@@ -16,8 +16,9 @@ const JobsList = props => {
     const employmentQuery = filters.employmentTypes.join(',') || '' // ✅ comma-separated
     const salaryQuery = filters.salaryRange || ''
     const searchQuery = filters.searchInput || ''
+    const locationQuery = filters.locations.join(',') || ''
 
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employmentQuery}&minimum_package=${salaryQuery}&search=${searchQuery}`
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employmentQuery}&minimum_package=${salaryQuery}&search=${searchQuery}&location=${locationQuery}`
 
     const options = {
       method: 'GET',

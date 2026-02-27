@@ -10,6 +10,8 @@ const FiltersGroup = props => {
     onSearchInputChange,
     onSearchSubmit,
     searchInput,
+    locationsList,
+    onChangeLocation,
   } = props
 
   return (
@@ -57,6 +59,21 @@ const FiltersGroup = props => {
               onChange={onChangeSalaryRange}
             />
             <label htmlFor={range.salaryRangeId}>{range.label}</label>
+          </li>
+        ))}
+      </ul>
+
+      <h3>Location</h3>
+      <ul className="filters-list">
+        {locationsList.map(location => (
+          <li key={location.locationId}>
+            <input
+              type="checkbox"
+              id={location.locationId}
+              value={location.locationId}
+              onChange={onChangeLocation}
+            />
+            <label htmlFor={location.locationId}>{location.label}</label>
           </li>
         ))}
       </ul>
